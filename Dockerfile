@@ -20,6 +20,8 @@ WORKDIR /var/www/html
 RUN mkdir -p /var/www/html/storage /var/www/html/bootstrap/cache
 
 RUN composer install --no-dev --optimize-autoloader
+RUN php artisan config:cache || true
+RUN php artisan route:cache || true
 
 RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache
 
