@@ -16,6 +16,9 @@ COPY . /var/www/html
 
 WORKDIR /var/www/html
 
+# حركة سحرية: إنشاء المجلدات الناقصة تلقائياً قبل إعطاء الصلاحيات
+RUN mkdir -p /var/www/html/storage /var/www/html/bootstrap/cache
+
 RUN composer install --no-dev --optimize-autoloader
 
 RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache
