@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nomo - مرحباً بك</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: "Nunito", sans-serif;
+            background: #ffffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            text-align: center;
+            padding: 40px;
+            width: 90%;
+            max-width: 420px;
+        }
+
+        .logo {
+            width: 140px;
+            height: 140px;
+            margin-bottom: 20px;
+            object-fit: contain;
+        }
+
+        h1 {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 16px;
+            color: #555;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 14px;
+            margin: 10px 0;
+            font-size: 18px;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            background: #4a90e2;
+            color: white;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #3a7ac7;
+        }
+
+        .btn-green {
+            background: #50c878;
+        }
+
+        .btn-green:hover {
+            background: #3fae63;
+        }
+
+        .lang-switcher {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #444;
+        }
+
+        .lang-switcher a {
+            color: #4a90e2;
+            margin: 0 8px;
+            text-decoration: none;
+        }
+
+        .lang-switcher a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- 🔥 اللوجو -->
+        <img src="<?php echo e(asset('images/nomo_logo.png.jpeg')); ?>" alt="Nomo Logo" class="logo" />
+
+        <!-- 🔥 النصوص -->
+        <h1><?php echo e($t['welcome']); ?></h1>
+        <p><?php echo e($t['subtitle']); ?></p>
+        
+        <!-- 🔥 الأزرار -->
+        <a href="<?php echo e(route('login')); ?>">
+            <button class="btn"><?php echo e($t['login']); ?></button>
+        </a>
+
+        <a href="<?php echo e(route('register')); ?>">
+            <button class="btn btn-green"><?php echo e($t['register']); ?></button>
+        </a>
+
+        <!-- 🔥 اختيار اللغة -->
+        <div class="lang-switcher">
+            <span><?php echo e($t['lang']); ?></span>
+
+            <a href="<?php echo e(url('/set-language/ar')); ?>">العربية</a> |
+            <a href="<?php echo e(url('/set-language/tr')); ?>">Türkçe</a> |
+            <a href="<?php echo e(url('/set-language/en')); ?>">English</a>
+        </div>
+
+    </div>
+
+</body>
+</html><?php /**PATH C:\xampp\htdocs\nmolearn\learnify\resources\views/welcome.blade.php ENDPATH**/ ?>
